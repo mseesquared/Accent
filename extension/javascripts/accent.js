@@ -33,7 +33,10 @@
   }
 
   var translate = function(utterance) {
-    // Pass utterance to John's server-side speech translation API...
+    // $.get("", function(translation) {
+    //   synthesize(translation);
+    // });
+
     var translation = "hola";
     synthesize(translation);
   }
