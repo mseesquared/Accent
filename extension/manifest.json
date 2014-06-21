@@ -5,6 +5,7 @@
   "content_scripts": [
     {
       "matches": [
+        "http://*/*", "https://*/*",
         "http://plus.google.com/hangouts/_/*",
         "https://plus.google.com/hangouts/_/*"
       ],

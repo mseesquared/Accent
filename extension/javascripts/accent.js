@@ -1,18 +1,44 @@
 (function(){
+  if (!annyang || !"speechSynthesis" in window) {
+    alert("Your web browser could not support Accent.");
+    return;
+  }
 
-  if (annyang) return;
+  var sanitizeLang = function(lang) {
+    return lang;
+  }
 
-  var startLang = prompt("What language will you be speaking in?");
-  var endLang = prompt("What language do you want your speech to be translated to?");
+  var startLang = sanitizeLang(prompt("What language will you be speaking in?"));
+  var endLang = sanitizeLang(prompt("What language do you want your speech to be translated to?"));
+
+  var langAbbrevs = {
+    "english": "en-US",
+    "spanish": "es-US",
+    "french": "fr-FR",
+    "german": "de-DE",
+    "chinese": "cmn-Hans-CN",
+    "dutch": "nl-NL",
+    "catalan": "ca-ES",
+    "czech": "cs-CZ",
+    "finnish": "fi-FI",
+    "polish": "pl-PL",
+    "russian": "ru-RU"
+  };
+
+  var synthesize = function(translation) {
+    var output = new SpeechSynthesisUtterance();
+    output.lang = langAbbrevs[endLang];
+    output.text = translation;
+    speechSynthesis.speak(output);
+  }
 
   var translate = function(utterance) {
-    // Pass utterance to John's server-side speech translation API.
-    // Pass the response into Yushi's client-side speech synthesis code.
+    // Pass utterance to John's server-side speech translation API...
+    var translation = "hola";
+    synthesize(translation);
   }
 
   var commands = { "*utterance": translate };
-
-  annyang.init(commands);
+  annyang.addCommands(commands);
   annyang.start();
-
 })();
