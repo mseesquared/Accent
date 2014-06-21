@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "Accent",
+  "version": "1.0.0",
+  "content_scripts": [
+    {
+      "matches": [
+        "http://plus.google.com/hangouts/_/*",
+        "https://plus.google.com/hangouts/_/*"
+      ],
+      "js": [
+        "libraries/annyang.min.js",
+        "javascripts/accent.js"
+      ]
+    }
+  ]
+}
