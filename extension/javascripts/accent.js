@@ -5,16 +5,16 @@
   }
 
   var langAbbrevs = {
-    "english": { "translate" : "en", "synthesis" : "en-US" },
-    "spanish": { "translate" : "es", "synthesis" : "es-US" },
-    "french": { "translate" : "fr", "synthesis" : "fr-FR" },
-    "german": { "translate" : "de", "synthesis" : "de-DE" },
-    "chinese": { "translate" : "zh-CHS", "synthesis" : "cmn-Hans-CN" },
-    "dutch": { "translate" : "nl", "synthesis" : "nl-NL" },
-    "czech": { "translate" : "cs", "synthesis" : "cs-CZ" },
-    "finnish": { "translate" : "fi", "synthesis" : "fi-FI" },
-    "polish": { "translate" : "pl", "synthesis" : "pl-PL" },
-    "russian": { "translate" : "ru", "synthesis" : "ru-RU" }
+    "english": { "recognize" : "en-US", "translate" : "en", "synthesis" : "en-US" },
+    "spanish": { "synthesis" : "es-US", "translate" : "es", "synthesis" : "es-US" },
+    "french": { "recognize" : "fr-FR", "translate" : "fr", "synthesis" : "fr-FR" },
+    "german": { "synthesis" : "de-DE", "translate" : "de", "synthesis" : "de-DE" }
+    // "chinese": { "translate" : "zh-CHS", "synthesis" : "cmn-Hans-CN" },
+    // "dutch": { "translate" : "nl", "synthesis" : "nl-NL" },
+    // "czech": { "translate" : "cs", "synthesis" : "cs-CZ" },
+    // "finnish": { "translate" : "fi", "synthesis" : "fi-FI" },
+    // "polish": { "translate" : "pl", "synthesis" : "pl-PL" },
+    // "russian": { "translate" : "ru", "synthesis" : "ru-RU" }
   };
 
   var sanitizeLang = function(lang) {
@@ -44,7 +44,7 @@
   }
 
   var translateUrl = function(utterance) {
-    return "http://accent-both.herokuapp.com/translate?" 
+    return "http://accent-both.herokuapp.com/translate?"
       + "text=" + encodeURI(utterance) + "&"
       + "from=" + langAbbrevs[startLang] + "&"
       + "to=" + langAbbrevs[endLang];
@@ -52,7 +52,7 @@
 
   var translate = function(utterance) {
     // $.get(
-    //   translateUrl(utterance), 
+    //   translateUrl(utterance),
     //   function(translation) {
     //     synthesize(translation);
     //   }
