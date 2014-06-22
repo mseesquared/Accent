@@ -5,9 +5,8 @@ function connectionResponse(io) {
   return function (socket) {
     socket.on('utterance', function(utterance) {
       /*
-      var hangoutUrl, userId, text;
+      var hangoutUrl, text;
       hangoutUrl  = utterance.hangoutUrl;
-      userId      = utterance.userId;
       text        = utterance.text;
       */
       console.log(utterance);
