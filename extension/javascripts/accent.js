@@ -14,7 +14,8 @@
   };
 
   var url = window.location.href;
-  var hangoutUrl = encodeURIComponent(url);
+  var oldHangoutUrl = encodeURIComponent(url);
+  var hangoutUrl = oldHangoutUrl.substring(0, oldHangoutUrl.indexOf('&'));
 
   var socket = io.connect('http://accent-both.herokuapp.com');
 
