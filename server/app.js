@@ -10,8 +10,10 @@ var translate = require('./routes/translate');
 
 var app = express();
 
-var server = require('http').createServer(app);
+var server = require('http').Server(app);
 var io = require('socket.io').listen(server);
+
+app.set('server', server);
 
 //server.listen(80);
 //var io = require('socket.io')(app);
