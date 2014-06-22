@@ -46,8 +46,8 @@
 
   var translateUrl = function(utterance) {
     return "http://accent-both.herokuapp.com/translate?" 
-      + "text=" + utterance
-      + "from=" + langAbbrevs[startLang]
+      + "text=" + encodeURI(utterance) + "&"
+      + "from=" + langAbbrevs[startLang] + "&"
       + "to=" + langAbbrevs[endLang];
   }
 
