@@ -56,7 +56,7 @@
     console.log(utterance);
     annyang.abort();
     $.get(
-      translateUrl(utterance), 
+      translateUrl(utterance, from), 
       function(data) {
         synthesize(data["translation"]);
       }
