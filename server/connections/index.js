@@ -10,7 +10,9 @@ function connectionResponse(io) {
       from        = utterancePkg.from; // the language from which we are translating
       text        = utterancePkg.text; // the text we are translating
       */
+      console.log('---------------------------------------');
       console.log(utterancePkg);
+      console.log('---------------------------------------');
       socket.broadcast.emit(utterancePkg);
     });
   }
