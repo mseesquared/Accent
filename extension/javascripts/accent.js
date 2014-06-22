@@ -5,16 +5,10 @@
   }
 
   var langAbbrevs = {
-    "chinese" : { "translate": "zh-CHS", "synthesize": "cmn-Hans-CN" },
-    "czech"   : { "translate": "cs", "synthesize": "cs-CZ" },
-    "dutch"   : { "translate": "nl", "synthesize": "nl-NL" },
-    "english" : { "translate": "en", "synthesize": "en-US" },
-    "finnish" : { "translate": "fi", "synthesize": "fi-FI" },
-    "french"  : { "translate": "fr", "synthesize": "fr-FR" },
-    "german"  : { "translate": "de", "synthesize": "de-DE" },
-    "polish"  : { "translate": "pl", "synthesize": "pl-PL" },
-    "russian" : { "translate": "ru", "synthesize": "ru-RU" },
-    "spanish" : { "translate": "es", "synthesize": "es-US" }
+    "english" : { "webSpeech": "en-US", "microsoft": "en" },
+    "french"  : { "webSpeech": "fr-FR", "microsoft": "fr" },
+    "german"  : { "webSpeech": "de-DE", "microsoft": "de" },
+    "spanish" : { "webSpeech": "es-US", "microsoft": "es" }
   };
 
   var sanitizeLang = function(lang) {
@@ -38,7 +32,7 @@
 
   var synthesize = function(translation) {
     var output = new SpeechSynthesisUtterance();
-    output.lang = langAbbrevs[endLang]["synthesize"];
+    output.lang = langAbbrevs[endLang]["webSpeech"];
     output.text = translation;
     output.onend = function() {
       annyang.start();
@@ -47,10 +41,10 @@
   }
 
   var translateUrl = function(utterance) {
-    return "http://accent-both.herokuapp.com/translate?" 
+    return "http://accent-both.herokuapp.com/translate?"
       + "text=" + encodeURI(utterance) + "&"
-      + "from=" + langAbbrevs[startLang]["translate"] + "&"
-      + "to=" + langAbbrevs[endLang]["translate"];
+      + "from=" + langAbbrevs[startLang]["microsoft"] + "&"
+      + "to=" + langAbbrevs[endLang]["microsoft"];
   }
 
   var translate = function(utterance) {
@@ -64,6 +58,7 @@
   }
 
   var annyangCommands = { "*utterance": translate };
+  annyang.setLanguage(langAbbrevs[startLang]["microsoft"]);
   annyang.addCommands(annyangCommands);
   annyang.start();
 })();
