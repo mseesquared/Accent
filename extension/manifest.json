@@ -20,5 +20,8 @@
         "javascripts/accent.js"
       ]
     }
+  ],
+  "permissions": [
+    "http://accent-both.herokuapp.com/"
   ]
 }
