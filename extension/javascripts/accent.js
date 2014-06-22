@@ -5,16 +5,16 @@
   }
 
   var langAbbrevs = {
-    "english": { "translate" : "en", "synthesis" : "en-US" },
-    "spanish": { "translate" : "es", "synthesis" : "es-US" },
-    "french": { "translate" : "fr", "synthesis" : "fr-FR" },
-    "german": { "translate" : "de", "synthesis" : "de-DE" },
-    "chinese": { "translate" : "zh-CHS", "synthesis" : "cmn-Hans-CN" },
-    "dutch": { "translate" : "nl", "synthesis" : "nl-NL" },
-    "czech": { "translate" : "cs", "synthesis" : "cs-CZ" },
-    "finnish": { "translate" : "fi", "synthesis" : "fi-FI" },
-    "polish": { "translate" : "pl", "synthesis" : "pl-PL" },
-    "russian": { "translate" : "ru", "synthesis" : "ru-RU" }
+    "chinese" : { "translate": "zh-CHS", "synthesize": "cmn-Hans-CN" },
+    "czech"   : { "translate": "cs", "synthesize": "cs-CZ" },
+    "dutch"   : { "translate": "nl", "synthesize": "nl-NL" },
+    "english" : { "translate": "en", "synthesize": "en-US" },
+    "finnish" : { "translate": "fi", "synthesize": "fi-FI" },
+    "french"  : { "translate": "fr", "synthesize": "fr-FR" },
+    "german"  : { "translate": "de", "synthesize": "de-DE" },
+    "polish"  : { "translate": "pl", "synthesize": "pl-PL" },
+    "russian" : { "translate": "ru", "synthesize": "ru-RU" },
+    "spanish" : { "translate": "es", "synthesize": "es-US" }
   };
 
   var sanitizeLang = function(lang) {
@@ -38,7 +38,7 @@
 
   var synthesize = function(translation) {
     var output = new SpeechSynthesisUtterance();
-    output.lang = langAbbrevs[endLang];
+    output.lang = langAbbrevs[endLang]["synthesize"];
     output.text = translation;
     speechSynthesis.speak(output);
   }
@@ -46,20 +46,17 @@
   var translateUrl = function(utterance) {
     return "http://accent-both.herokuapp.com/translate?" 
       + "text=" + encodeURI(utterance) + "&"
-      + "from=" + langAbbrevs[startLang] + "&"
-      + "to=" + langAbbrevs[endLang];
+      + "from=" + langAbbrevs[startLang]["translate"] + "&"
+      + "to=" + langAbbrevs[endLang]["translate"];
   }
 
   var translate = function(utterance) {
-    // $.get(
-    //   translateUrl(utterance), 
-    //   function(translation) {
-    //     synthesize(translation);
-    //   }
-    // );
-
-    var translation = "hola";
-    synthesize(translation);
+    $.get(
+      translateUrl(utterance), 
+      function(translation) {
+        synthesize(translation);
+      }
+    );
   }
 
   var commands = { "*utterance": translate };
