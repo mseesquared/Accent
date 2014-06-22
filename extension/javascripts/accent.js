@@ -19,7 +19,6 @@
   };
 
   var sanitizeLang = function(lang) {
-    // lang = lang.replace(/ /g,'');
     lang = lang.toLowerCase();
     for (var key in langAbbrevs) {
       if (langAbbrevs.hasOwnProperty(key)) {
