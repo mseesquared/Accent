@@ -2,39 +2,55 @@
 <html>
   <head>
     <title>Accent</title>
+    <link rel="stylesheet" type="text/css" href="libraries/bootstrap-3.1.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="libraries/chosen_v1.1.0/chosen.min.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
   </head>
   <body>
     <div class="header">
       <img src="images/accent48.png">
     </div>
-    <form class="settings">
-      <div>
-        <input type="radio" name="state" value="male">On
-        <input type="radio" name="state" value="female">Off
+    <form>
+      <div class="settings">
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn active">
+            <input type="radio" name="state"> On
+          </label>
+          <label class="btn">
+            <input type="radio" name="state"> Off
+          </label>
+        </div>
+        <div>
+          <div class="title">
+            <span class="glyphicon glyphicon-globe"></span>
+            Language
+          </div>
+          <select class="chosen-select">
+            <option value="english">English</option>
+            <option value="french">French</option>
+            <option value="german">German</option>
+            <option value="spanish">Spanish</option>
+          </select>
+        </div>
+        <div>
+          <div class="title">
+            <span class="glyphicon glyphicon-user"></span>Voice
+          </div>
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn active">
+              <input type="radio" name="voice"> Male
+            </label>
+            <label class="btn">
+              <input type="radio" name="voice"> Female
+            </label>
+          </div>
+        </div>
       </div>
-      <br>
-      <div>
-        <strong>Language</strong>
-        <br>
-        <select>
-          <option value="english">English</option>
-          <option value="french">French</option>
-          <option value="german">German</option>
-          <option value="spanish">Spanish</option>
-        </select>
-      </div>
-      <br>
-      <div>
-        <strong>Voice</strong>
-        <br>
-        <input type="radio" name="voice" value="male">Male
-        <input type="radio" name="voice" value="female">Female
-      </div>
-      <br>
-      <input type="submit" value="Save">
+      <button type="submit" class="save">SAVE</button>
     </form>
     <script src="libraries/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="libraries/bootstrap-3.1.1-dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="libraries/chosen_v1.1.0/chosen.jquery.min.js" type="text/javascript"></script>
     <script src="javascripts/popup.js" type="text/javascript"></script>
   </body>
 </html>

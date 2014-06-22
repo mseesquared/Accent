@@ -3,7 +3,6 @@ body {
   margin: 0px;
   text-align: center;
   font-family: "Helvetica Neue", sans-serif;
-  font-size: 13px;
 }
 
 .header {
@@ -15,5 +14,62 @@ body {
 }
 
 .settings {
-  padding: 20px;
+  padding: 20px 0px;
+}
+
+.save {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 13px;
+  width: 100%;
+  height: 50px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  cursor: pointer;
+  background-color: #6aa3c8;
+  color: #ffffff;
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: background-color 0.5s ease;
+  font-size: 13px;
+}
+
+.save:hover {
+  background-color: #458bba;
+}
+
+.title {
+  font-weight: bold;
+  margin: 20px 0px;
+  padding: 10px;
+  background-color: #f3f3f3;
+  font-size: 14px;
+}
+
+.chosen-container {
+  text-align: left;
+}
+
+.btn {
+  width: 100px;
+  background-color: #6aa3c8;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 13px;
+  transition: background-color 0.5s ease;
+}
+
+.btn:hover {
+  color: #ffffff;
+  background-color: #458bba;
+}
+
+.glyphicon-user {
+  font-size: 13px;
+  margin-right: 6px;
+}
+
+.glyphicon-globe {
+  font-size: 13px;
+  margin-right: 3px;
 }
