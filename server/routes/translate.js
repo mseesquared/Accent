@@ -12,31 +12,38 @@ var client = new MsTranslator({
  */
 
 router.get('/', function(req, res) {
-  var text, from, to;
-  text = "hello world";
-  from = "en";
-  to = "es";
 
+  var text, from, to;
+
+  text = req.query.text;
+  from = req.query.from;
+  to = req.query.to;
+
+  translate(text, from, to, function(translation) {
+    res.json({'translation': translation});
+  });
+});
+
+function translate(text, from, to, cb) {
   var params = {
     'text': text,
     'from': from,
     'to': to
   };
+  console.log(to);
 
   client.initialize_token(function(keys) {
-    console.log(keys.access_token);
+    // debug
+    // console.log(keys.access_token);
 
     client.translate(params, function(err, data) {
 
-      console.log(data);
+      // debug
+      // console.log(data);
 
+      cb(data);
     });
   });
-
-  res.json({test: "something"});
-});
-
-function translate(req, res, cb) {
 }
 
 module.exports = router;
