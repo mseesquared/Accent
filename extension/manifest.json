@@ -23,7 +23,8 @@
     }
   ],
   "permissions": [
-    "http://accent-both.herokuapp.com/"
+    "http://accent-both.herokuapp.com/",
+    "ws://accent-both.herokuapp.com/"
   ],
   "browser_action": {
     "default_icon": {
