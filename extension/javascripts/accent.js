@@ -64,7 +64,7 @@
   }
 
   // socket called when an utterance is sent to this client
-  socket.on(hangoutUrl, function(utterancePkg) {
+  socket.on('utterancePkg', function(utterancePkg) {
 
     // If the hangoutUrls do not match, ignore the broadcast
     if (utterancePkg.hangoutUrl !== hangoutUrl) return;

@@ -13,7 +13,7 @@ function connectionResponse(io) {
       console.log('---------------------------------------');
       console.log(utterancePkg);
       console.log('---------------------------------------');
-      socket.broadcast.emit(utterancePkg);
+      socket.broadcast.emit('utterancePkg', utterancePkg);
     });
   }
 }
