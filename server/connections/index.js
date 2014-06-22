@@ -3,14 +3,15 @@ function connectionResponse(io) {
 
   // The function
   return function (socket) {
-    socket.on('utterance', function(utterance) {
+    socket.on('utterancePkg', function(utterancePkg) {
       /*
-      var hangoutUrl, text;
-      hangoutUrl  = utterance.hangoutUrl;
-      text        = utterance.text;
+      var hangoutUrl, from, text;
+      hangoutUrl  = utterancePkg.hangoutUrl; // hangoutUrl for the msg
+      from        = utterancePkg.from; // the language from which we are translating
+      text        = utterancePkg.text; // the text we are translating
       */
-      console.log(utterance);
-      io.broadcast(utterance);
+      console.log(utterancePkg);
+      socket.broadcast.emit(utterancePkg);
     });
   }
 }
