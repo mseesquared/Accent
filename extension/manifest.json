@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Accent",
   "version": "1.0.0",
-  "description": "Supercharge your video conversations with realtime speech translation and speech synthesis.",
+  "description": "Supercharge your video conversations with realtime speech translation and speech synthesis!",
   "icons": {
     "16": "images/accent16.png",
     "48": "images/accent48.png",
