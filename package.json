@@ -14,6 +14,7 @@
     "morgan": "~1.0.0",
     "mstranslator": "^0.1.6",
     "socket.io": "^1.0.6",
-    "static-favicon": "~1.0.0"
+    "static-favicon": "~1.0.0",
+    "nonce": "~1.0.3"
   }
 }
