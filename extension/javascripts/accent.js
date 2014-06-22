@@ -19,6 +19,7 @@
   };
 
   var sanitizeLang = function(lang) {
+    if (!lang) return null;
     lang = lang.toLowerCase();
     for (var key in langAbbrevs) {
       if (langAbbrevs.hasOwnProperty(key)) {
@@ -29,7 +30,7 @@
   }
 
   var startLang = sanitizeLang(prompt("What language will you be speaking in?"));
-  var endLang = sanitizeLang(prompt("What language do you want your speech to be translated to?"));
+  var endLang = sanitizeLang(prompt("What language will your speech to be translated to?"));
 
   if (!startLang || !endLang) {
     alert("Language not supported by Accent.");
@@ -43,10 +44,20 @@
     speechSynthesis.speak(output);
   }
 
+  var translateUrl = function(utterance) {
+    return "http://accent-both.herokuapp.com/translate?" 
+      + "text=" + utterance
+      + "from=" + langAbbrevs[startLang]
+      + "to=" + langAbbrevs[endLang];
+  }
+
   var translate = function(utterance) {
-    // $.get("", function(translation) {
-    //   synthesize(translation);
-    // });
+    // $.get(
+    //   translateUrl(utterance), 
+    //   function(translation) {
+    //     synthesize(translation);
+    //   }
+    // );
 
     var translation = "hola";
     synthesize(translation);
