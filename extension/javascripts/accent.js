@@ -8,7 +8,9 @@
     "english" : { "webSpeech": "en-US", "microsoft": "en" },
     "french"  : { "webSpeech": "fr-FR", "microsoft": "fr" },
     "german"  : { "webSpeech": "de-DE", "microsoft": "de" },
-    "spanish" : { "webSpeech": "es-US", "microsoft": "es" }
+    "spanish" : { "webSpeech": "es-US", "microsoft": "es" },
+    "dutch"   : { "webSpeech": "nl-NL", "microsoft": "nl" },
+    "italian" : { "webSpeech": "it-IT", "microsoft": "it" }
   };
 
   var url = window.location.href;
