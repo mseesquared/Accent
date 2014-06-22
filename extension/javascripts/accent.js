@@ -39,6 +39,18 @@
     }
     speechSynthesis.speak(output);
   }
+  
+  // *****
+  var url = window.location.href;
+  var hangoutUrl = encodeURIComponent(url);
+  var text = 
+
+  var socket = io.connect('http://accent-both.herokuapp.com');
+
+  socket.broadcast.emit( ) {
+    console.log
+  }
+  // ****
 
   var translateUrl = function(utterance) {
     return "http://accent-both.herokuapp.com/translate?"

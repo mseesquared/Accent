@@ -18,8 +18,7 @@
         "libraries/jquery-1.11.1.min.js",
         "libraries/annyang.min.js",
         "libraries/socket.io.js",
-        "javascripts/accent.js",
-        "javascripts/socket.js"
+        "javascripts/accent.js"
       ]
     }
   ],
