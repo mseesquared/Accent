@@ -63,6 +63,7 @@
 
   // socket called when an utterance is sent to this client
   socket.on(hangoutUrl, function(utterancePkg) {
+
     // If the hangoutUrls do not match, ignore the broadcast
     if (utterancePkg.hangoutUrl !== hangoutUrl) return;
 
@@ -78,11 +79,9 @@
     utterancePkg.hangoutUrl = hangoutUrl;
     utterancePkg.from = nativeLang;
     utterancePkg.text = utterance;
-    socket.emit("utterance", utterancePkg) {
+    socket.emit("utterance", utterancePkg);
     console.log("Emitting utterance: " + utterancePkg);
   }
-  // ****
-
 
   var annyangCommands = { "*utterance": emit };
   annyang.setLanguage(langAbbrevs[nativeLang]["microsoft"]);
