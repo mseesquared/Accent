@@ -1,0 +1,19 @@
+body {
+  width: 300px;
+  margin: 0px;
+  text-align: center;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 13px;
+}
+
+.header {
+  padding: 20px;
+  background-color: #f3f3f3;
+  background-image: linear-gradient(#f9f9f9, #f3f3f3);
+  background-repeat: repeat-x;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.settings {
+  padding: 20px;
+}

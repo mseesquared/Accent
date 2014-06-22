@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Accent",
   "version": "1.0.0",
-  "description": "Supercharge your video conversations with realtime speech translation and speech synthesis.",
+  "description": "Supercharge your Google Hangouts video chats with realtime speech translation and speech synthesis.",
   "icons": {
     "16": "images/accent16.png",
     "48": "images/accent48.png",
@@ -23,5 +23,16 @@
   ],
   "permissions": [
     "http://accent-both.herokuapp.com/"
+  ],
+  "browser_action": {
+    "default_icon": {
+      "19": "images/accent19.png",
+      "38": "images/accent38.png"
+    },
+    "default_title": "Accent",
+    "default_popup": "popup.html"
+  }, 
+  "permissions": [
+    "storage"
   ]
 }
