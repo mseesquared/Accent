@@ -6,6 +6,7 @@ var client = new MsTranslator({
                                 'client_secret': process.env.CLIENT_SECRET
                               });
 
+
 /*
  * GET translation
  * GET /translate
