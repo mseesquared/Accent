@@ -40,6 +40,9 @@
     var output = new SpeechSynthesisUtterance();
     output.lang = langAbbrevs[endLang]["synthesize"];
     output.text = translation;
+    output.onend = function() {
+      annyang.start();
+    }
     speechSynthesis.speak(output);
   }
 
@@ -51,15 +54,16 @@
   }
 
   var translate = function(utterance) {
+    annyang.abort();
     $.get(
       translateUrl(utterance), 
-      function(translation) {
-        synthesize(translation);
+      function(data) {
+        synthesize(data["translation"]);
       }
     );
   }
 
-  var commands = { "*utterance": translate };
-  annyang.addCommands(commands);
+  var annyangCommands = { "*utterance": translate };
+  annyang.addCommands(annyangCommands);
   annyang.start();
 })();
