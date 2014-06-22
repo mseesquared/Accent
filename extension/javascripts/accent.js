@@ -29,7 +29,7 @@
 
   var nativeLang = sanitizeLang(prompt("What is your language?"));
 
-  if (nativeLang) {
+  if (!nativeLang) {
     alert("Language not supported by Accent.");
     return;
   }
