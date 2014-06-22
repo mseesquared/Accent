@@ -52,6 +52,8 @@
   }
 
   var translate = function(utterance, from) {
+    console.log('Translating utterance ***************************');
+    console.log(utterance);
     annyang.abort();
     $.get(
       translateUrl(utterance), 
