@@ -79,7 +79,7 @@
     utterancePkg.hangoutUrl = hangoutUrl;
     utterancePkg.from = nativeLang;
     utterancePkg.text = utterance;
-    socket.emit("utterance", utterancePkg);
+    socket.emit("utterancePkg", utterancePkg);
     console.log("Emitting utterance: " + utterancePkg);
   }
 
