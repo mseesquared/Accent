@@ -56,28 +56,7 @@ charset = iso - 8859 - 1 " />
     onClick="toggleTranslate()"/>
 </p>
 
-<p>
-<br/>
-<input class="button" type="button" value="Top hat!" id="topHatButton"
-    onClick="showOverlay('topHat')"/>
 
-<input class="button" type="button" value="Monocle!" id="monocleButton"
-    onClick="showOverlay('mono')"/>
-
-<input class="button" type="button" value="Mustache!" id="mustacheButton"
-	    onClick="showOverlay('stache')"/>
-	    
-<input class="button" type="button" value="Fancy!" id="fancyButton"
-        onClick="showOverlay('fancy')"/>
-
-<input class="button" type="button" value="Animated!" id="animatedButton"
-        onClick="showAnimatedOverlay()"/>
-        
-
-<input class="button" type="button" value="Nothing." id="nothingButton"
-			    onClick="showNothing()"/>
-</p>
-	
 <div id="overlayControls" style="visibility: hidden">
 
 	SCALE:
