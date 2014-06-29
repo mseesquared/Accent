@@ -52,8 +52,8 @@ charset = iso - 8859 - 1 " />
 <div id='fullUI' style='visibility:hidden;'>
 <p>
 <br/>
-<input class="button" type="button" value="Good day!" id="topHatButton"
-    onClick="sayGoodDay()"/>
+<input class="button" type="button" value="Start translating!" id="topHatButton"
+    onClick="toggleTranslate()"/>
 </p>
 
 <p>
