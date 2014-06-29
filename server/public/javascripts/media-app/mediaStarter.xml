@@ -58,6 +58,9 @@ charset = iso - 8859 - 1 " />
 
 <p>
 <br/>
+
+<!--
+  
 <input class="button" type="button" value="Top hat!" id="topHatButton"
     onClick="showOverlay('topHat')"/>
 
@@ -76,6 +79,8 @@ charset = iso - 8859 - 1 " />
 
 <input class="button" type="button" value="Nothing." id="nothingButton"
 			    onClick="showNothing()"/>
+-->
+
 </p>
 	
 <div id="overlayControls" style="visibility: hidden">
