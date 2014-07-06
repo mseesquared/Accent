@@ -56,6 +56,19 @@ charset = iso - 8859 - 1 " />
     onClick="toggleTranslate()"/>
 </p>
 
+</div>
+
+</center>
+
+<script src="/javascript/mediaStarter.js" type="text/javascript"></script>
+<script src="https://plushangoutstartershadow.appspot.com/static/mediaStarter.js"></script>
+
+]]>
+</Content>
+
+</Module>
+
+<!--
 
 <div id="overlayControls" style="visibility: hidden">
 
@@ -92,13 +105,6 @@ charset = iso - 8859 - 1 " />
 	 
 </div>
 
-</div>
+-->
 
-</center>
 
-<script src="https://plushangoutstartershadow.appspot.com/static/mediaStarter.js"></script>
-
-]]>
-</Content>
-
-</Module>
