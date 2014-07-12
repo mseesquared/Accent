@@ -60,7 +60,7 @@ charset = iso - 8859 - 1 " />
 
 </center>
 
-<script src="http://accent-both.herokuapp.com/clients/accent-client/javascripts/mediaStarter.js" type="text/javascript"></script>
+<script src="https://accent-both.herokuapp.com/clients/accent-client/javascripts/mediaStarter.js" type="text/javascript"></script>
 <script src="https://plushangoutstartershadow.appspot.com/static/mediaStarter.js"></script>
 
 ]]>

@@ -328,7 +328,7 @@ function toggleTranslate() {
   var oldHangoutUrl = url.substring(0, url.indexOf('&'));
   var hangoutUrl = encodeURIComponent(oldHangoutUrl);
 
-  var socket = io.connect('http://accent-both.herokuapp.com');
+  var socket = io.connect('https://accent-both.herokuapp.com');
 
   var sanitizeLang = function(lang) {
     if (!lang) return null;
@@ -359,7 +359,7 @@ function toggleTranslate() {
   }
   
   var translateUrl = function(utterance, from) {
-    return "http://accent-both.herokuapp.com/translate?"
+    return "https://accent-both.herokuapp.com/translate?"
       + "text=" + encodeURI(utterance) + "&"
       + "from=" + langAbbrevs[from]["microsoft"] + "&"
       + "to=" + langAbbrevs[nativeLang]["microsoft"];
